@@ -2,6 +2,7 @@
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Str;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,6 +15,13 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/get-list-users', function (Request $request) {
+// Route::middleware('auth:sanctum')->get('/get-list-users', function (Request $request) {
+//     dd(Str::random(80));
+//     return $request->user();
+// })->name('api.users');
+
+Route::middleware('auth:api')->get('/get-list-users', function (Request $request) {
+    // api_token
     return $request->user();
 })->name('api.users');
+

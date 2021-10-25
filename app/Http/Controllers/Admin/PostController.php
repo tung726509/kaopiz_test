@@ -17,7 +17,7 @@ class PostController extends Controller
         $model = new Post();
         $posts = $model->all();
 
-        // dd($model->all());
+        // dd( Auth::user()->tokens() );
 
         return view('post.index',compact('header','posts'));
     }
